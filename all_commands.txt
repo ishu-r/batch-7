@@ -1,0 +1,631 @@
+    1  lsb_release -a
+    2  whoami
+    3  date
+    4  echo "hello dostodate"
+    5  echo "hello dosto0echo "hello dostodate"!"
+    6  echo "hello dosto"
+    7  ls
+    8  pwd
+    9  mkdir devops
+   10  ls 
+   11  touch devops.txt
+   12  ls
+   13  cd devops
+   14  pwd
+   15  cd 
+   16  pwd
+   17  cd /
+   18  pwd
+   19  ls
+   20  pwd
+   21  cd bin
+   22  ls
+   23  df
+   24  man cp
+   25  cd ..
+   26  ls
+   27  cd boot
+   28  ls
+   29  cd ..
+   30  ls
+   31  cd dev
+   32  ls
+   33  cd ..
+   34  cd home
+   35  ls
+   36  cd ubuntu
+   37  ls
+   38  ping www.google.com
+   39  touch file1.txt
+   40  touch file{2..10}.txt
+   41  ls
+   42  rm -r file*
+   43  ls
+   44  touch file{1..10}
+   45  ls
+   46  rm -r devops
+   47  ls
+   48  cd /
+   49  ls
+   50  cd root
+   51  pwd
+   52  cd ubuntu
+   53  cd ..
+   54  pwd
+   55  cd devops
+   56  ls
+   57  pwd
+   58  cd ubuntu/
+   59  cd home
+   60  ls
+   61  cd ubuntu
+   62  ls
+   63  cat file1.txt
+   64  clear
+   65  pwd
+   66  ls
+   67  mkdir devops
+   68  ls
+   69  cd .ssh
+   70  ls
+   71  ssh -i id_ed25519 ubuntu@ec2-18-218-76-2.us-east-2.compute.amazonaws.com
+   72  ls -l id_ed25519
+   73  ssh -i id_ed25519 ubuntu@ec2-18-218-76-2.us-east-2.compute.amazonaws.com
+   74  ls
+   75  cat id_ed25519.pub
+   76  ssh -i id_ed25519 ubuntu@ec2-18-218-76-2.us-east-2.compute.amazonaws.com
+   77  exit
+   78  ls
+   79  mkdir from_ishu
+   80  ls
+   81  cd from_ishu/
+   82  ls
+   83  pwd
+   84  exit
+   85  cd from_ishu/
+   86  ls
+   87  touch secret.txt
+   88  echo "hello dosto" > secret.txt
+   89  ls
+   90  exit
+   91  whoami
+   92  sudo useradd -m user1
+   93  sudo useradd -m user2
+   94  sudo useradd -m user3
+   95  cat /etc/passwd
+   96  sudo passwd user1 
+   97  su user1
+   98  user@123
+   99  su user1
+  100  whoami
+  101  vim my-devops-file.txt
+  102  cat my-devops-file.txt
+  103  ls -l my-devops-file.txt
+  104  sudo groupadd devops
+  105  cat /etc/group
+  106  sudo groupadd tester
+  107  cat /etc/group
+  108  sudo usermod -aG devops user1
+  109  sudo usermod -aG devops user2
+  110  sudo useradd -aG tester user3
+  111  cat /etc/group
+  112  sudo useradd -aG tester user3
+  113  sudo gpasswd -M user1 user2 user3 tester
+  114  sudo gpasswd -M user1,user2,user3 tester
+  115  cat /etc/group
+  116  ls -l my-devops-file.txt
+  117  sudo chgrp devops my-devops-file.txt
+  118  cat /etc/group
+  119  ls -l my-devops-file.txt
+  120  touch my-files.txt
+  121  mkdir my-directory
+  122  ls -l
+  123  chmod 740 file1
+  124  ls -l file
+  125  ls -l file1
+  126  chmod 740 my-directory
+  127  ls -l my-directory
+  128  ls -l
+  129  whoami
+  130  ls
+  131  systemctl status ssh
+  132  sudo apt-get update
+  133  ls
+  134  mkdir logs
+  135  cd logs
+  136  vim app.log
+  137  ls -l app.log
+  138  grep ERROR app.log
+  139  grep error app.log
+  140  grep -i error app.log
+  141  clear
+  142  grep devops app.log
+  143  grep -ir dosto /home/ubuntu/
+  144  cd
+  145  find app.log
+  146  find /home/ubuntu/ -name "*.log"
+  147  find /home/ubuntu/ -name "*.txt"
+  148  cd logd
+  149  cd logs
+  150  ls
+  151  cat app.log
+  152  awk '/WARN/' app.log
+  153  awk '/WARN/ {print $1,$2' app.log
+  154  awk '/WARN/ {print $1,$2}' app.log
+  155  awk '/WARN/ {print $1,$2 $3,$4}' app.log
+  156  awk '/WARN/ {print NR,$5}' app.log
+  157  awk 'NR>=1 && NR<=10 && {print NR.$1,$2,$5}' app.log
+  158  awk 'NR>=1 && NR<=10 /WARN/ && {print NR.$1,$2,$5}' app.log
+  159  awk 'NR>=1 && NR<=10 &&/WARN/ {print NR,$1,$2,$5} app.log
+  160  awk 'NR>=1 && NR<=10 &&/WARN/ {print NR,$1,$2,$5}' app.log
+  161  awk 'NR>=1 && NR<=10 &&/WARN/ {print NR,$1,$2,$5}' app.log
+  162  ls
+  163  cd logs
+  164  awk 'NR>=1 && NR<=10 &&/WARN/ {print NR,$1,$2,$5}' app.log
+  165  cat app.log
+  166  awk '$1>=2015-07-01 && $1<=2015-07-30 &&/WARN/ {print NR,$1,$2,$5}' app.log
+  167  awk '$1>=2015-07-01 && $1<=2015-07-30 && /ERROR/ {print NR,$1,$2,$5}' app.log
+  168  awk '$1>=2015-07-01 && $1<=2015-07-30 && /ERROR/ {print NR,$5,$7}' app.log
+  169  awk '$1>=2015-07-01 && $1<=2015-07-30 && /WARN/ {print NR,$5,$7}' app.log
+  170  cd logd
+  171  cd logs
+  172  vim dev.env
+  173  touch prod.env
+  174  vim prod.env
+  175  sed 's/test@123/qweery@123'/g' dev.env
+  176  sed 's/test@123/qweery@123'/g' dev.env > prod.env
+  177  ls
+  178  cat dev.env
+  179  sed 's/test @123/qwerty@123/g' dev.env
+  180  sed 's/test @123/qwerty@123/g' dev.env > prod.env
+  181  cat prod.env
+  182  df -h
+  183  df -h | sed 's/tmpfs/HDD/g'
+  184  df -h
+  185  clear
+  186  mkdir scripts
+  187  ls
+  188  cd scripts
+  189  vim chatur.sh
+  190  cat chatur
+  191  cat chatur.sh
+  192  ls -l chatur.sh
+  193  ls
+  194  whoami
+  195  cd scripts
+  196  cd scripts
+  197  ls
+  198  ls -l
+  199  cat chatur
+  200  vim chatur.sh
+  201  cat chatur
+  202  cat chatur.sh
+  203  ls -l chatur.sh
+  204  chmod 700 chatur.sh
+  205  ls
+  206  ./chatur.sh
+  207  vim chatur.sh
+  208  ./chatur.sh
+  209  df -h |awk '{print $2}'
+  210  df -h |awk 'NR==2{print $2}'
+  211  ./chatur.sh
+  212  free -h |awk 'NR==2{print $2}'
+  213  vim chatur.sh
+  214  ./chatur.sh
+  215  vim chatur.sh
+  216  ./chatur.sh
+  217  ls
+  218  cd scripts
+  219  free -h
+  220  free -h | awk 'NR==2 {print $2}'
+  221  df -h
+  222  df -h | awk 'NR==2 {print $2}'
+  223  vim chatur.sh
+  224  ./chatur.sh
+  225  vim chatur.sh
+  226  ./chatur.sh
+  227  vim chatur.sh
+  228  ./chatur.sh
+  229  vim chatur.sh
+  230  ./chatur.sh 1 2 29 30
+  231  vim chatur.sh
+  232  ./chatur.sh 1 2 29 30
+  233  vim script1.sh
+  234  ./chatur 1 2 3 4
+  235  ./script1 1 2 3 4
+  236  ./script1.sh 1 2 3 4
+  237  vim script1.sh
+  238  ./script1.sh 1 2 3 4
+  239  ./script1.sh
+  240  vim script1.sh
+  241  vim chatur.sh
+  242  ./chatur.sh 1 2 3 4
+  243  cd scripts
+  244  vim create_user.sh
+  245  ls -l create_user.sh
+  246  chmod 700 create_user.sh
+  247  ls -l create_user.sh
+  248  vim create_user.sh
+  249  ./create_user.sh
+  250  cat /etc/passwd
+  251  vim create_user.sh
+  252  ./create_user.sh
+  253  cat /etc/passwd
+  254  vim create_user.sh
+  255  ./create_user.sh
+  256  cat ./etc/passwd
+  257  cat /etc/passwd
+  258  cat create_user.sh
+  259  vim create_user.sh
+  260  ./create_user.sh
+  261  vim create_user.sh
+  262  cat create_user.sh
+  263  mv create_user.sh user_management.sh
+  264  ls
+  265  vim user_management.sh
+  266  ./user_management.sh
+  267  vim user_management.sh
+  268  ./user_management.sh
+  269  vim user_management.sh
+  270  ./user_management.sh
+  271  cat user_management
+  272  cat user_management.sh
+  273  ls
+  274  cd scripts
+  275  ls
+  276  chmod 700 script1.sh
+  277  ls -l script1.sh
+  278  vim user_management.sh
+  279  vim script1.sh
+  280  ./script.sh
+  281  ./script1.sh
+  282  vim script1.sh
+  283  ./user_management.sh
+  284  vim user_management.sh
+  285  ls
+  286  cat file1
+  287  cd scripts
+  288  vim backup.sh
+  289  date
+  290  date '+%Y_%m_%d'
+  291  date '+%Y-%m-%d-%H-%M-%S'
+  292  vim backup.sh
+  293  mkdir backups
+  294  cd backups
+  295  pwd
+  296  cd scripts
+  297  cd
+  298  cd scripts
+  299  vim backup.sh
+  300  chmod 700 backup.sh
+  301  pwd
+  302  ./backup.sh /home/ubuntu/scripts
+  303  vim backup.sh
+  304  ./backup.sh /home/ubuntu/scripts
+  305  vim backup.sh
+  306  ./backup.sh /home/ubuntu/scripts
+  307  vim backup.sh
+  308  sudo apy-get install zip
+  309  sudo apt-get install zip
+  310  ./backup.sh /home/ubuntu/scripts
+  311  ls -l
+  312  cd ..
+  313  ls
+  314  cd scripts
+  315  ls
+  316  cd backups
+  317  ls
+  318  cd ..
+  319  vim backup.sh
+  320  ls
+  321  cd scripts
+  322  ls
+  323  cd backups
+  324  ls
+  325  cd ..
+  326  vim backups.sh
+  327  vim backup.sh
+  328  git
+  329  git --version
+  330  ls -l
+  331  mkdit git-tutorial
+  332  mkdir git-tutorial
+  333  cd tutorial
+  334  cd git-tutorial
+  335  mkdir devops-project-batch-7
+  336  ls
+  337  mkdir devops-practice-project
+  338  ls
+  339  cd devops-project-batch-7
+  340  git init
+  341  ls -a
+  342  cd .git
+  343  ls
+  344  cd ..
+  345  cd devops-project-batch-7
+  346  touch laila.txt
+  347  ls
+  348  touch majnu.txt
+  349  ls -l
+  350  git status
+  351  cd git-tutorial
+  352  ls
+  353  cd devops-project-batch-7
+  354  ls
+  355  git status
+  356  git log --oneline
+  357  git checkout -b dev
+  358  git log --oneline
+  359  touch feature2.txt
+  360  vim feature2.txt
+  361  git status
+  362  git add feature2.txt
+  363  git log --oneline
+  364  ls
+  365  git switch master
+  366  ls
+  367  cd git-tutorial
+  368  cd devops-project-batch-7
+  369  ls
+  370  git add laila.txt
+  371  git add majnu.txt
+  372  git status
+  373  git commit -m "feat:added laila majnu"
+  374  ls
+  375  git status
+  376  git log
+  377  rm majnu.txt
+  378  ls
+  379  git status
+  380  git restore majnu.txt
+  381  ls
+  382  history
+  383  touch file1.txt 
+  384  touch file2.txt 
+  385  touch file3.txt 
+  386  git status
+  387  git add .
+  388  git status
+  389  git restore --staged file1.txt
+  390  git status
+  391  git restore --staged file2.txt
+  392  git restore --staged file3.txt
+  393  git status
+  394  ls
+  395  git status
+  396  git config --global user.name "IshuRaj"
+  397  git config --global user.email "ishu04r@gmail.com"
+  398  git status
+  399  git log
+  400  git log --online
+  401  git log --oneline
+  402  rm file*.txt
+  403  git status
+  404  ls
+  405  git status
+  406  whoami
+  407  git
+  408  git --version
+  409  ls
+  410  cd git tutorial
+  411  cd git-tutorial
+  412  ls
+  413  cd devops-project-batch-7
+  414  ls -a
+  415  whoami
+  416  ls
+  417  ls -l
+  418  cd git-tutorial
+  419  ls
+  420  git
+  421  git --version
+  422  ls
+  423  cd devops-project-batch-7
+  424  ls
+  425  ls -a
+  426  ls -l
+  427  mv feature2.txt feature1.txt
+  428  ls 
+  429  git status
+  430  git add feature1
+  431  git add feature1.txt
+  432  git status
+  433  git log
+  434  git status
+  435  git commit -m "file :feat1 added"
+  436  ls
+  437  git status
+  438  git log
+  439  rm majnu.txt
+  440  git status
+  441  git restore majnu.txt
+  442  ls
+  443  history
+  444  ls
+  445  git log
+  446  history > all_commands.txt
+  447  ls
+  448  cat all_commands
+  449  cat all_commands.txt
+  450  ls
+  451  git status
+  452  git add all_commands.txt
+  453  git status
+  454  git log
+  455  git status
+  456  git commit -m "feat" added all commands"
+  457  git commit -m "feat:added all commands"
+  458  git status
+  459  git log
+  460  ls
+  461  vim all_commands.txt
+  462  git status
+  463  git add all_commands.txt
+  464  git status
+  465  git commit -m "chore: minor changes to commands"
+  466  git ststus
+  467  git status
+  468  git log
+  469  git log --oneline
+  470  git log --oneline --pretty
+  471  git log --oneline
+  472  git status
+  473  rm feature1.txt
+  474  ls
+  475  git status
+  476  git log 
+  477  git log --oneline
+  478  git status
+  479  git restore feature1.txt
+  480  git status
+  481  rm feature2.txt
+  482  git status
+  483  ls
+  484  git status
+  485  git log
+  486  ls
+  487  cd git-tutorial
+  488  ls
+  489  cd devops-project-batch-7
+  490  ls
+  491  git
+  492  cd
+  493  cd git-tutorial
+  494  ls
+  495  ls -a
+  496  cd devops-project-batch-7
+  497  ls -a
+  498  git status
+  499  git log --oneline
+  500  git checkout -b dev
+  501  git status
+  502  ls
+  503  git switch dev
+  504  ls
+  505  git log --oneline
+  506  git switch master
+  507  git log --oneline
+  508  git switch dev
+  509  ls
+  510  git log
+  511  git config --global user.name "ishu"
+  512  git config --global user.email "ishu660@gmail.com"
+  513  git status
+  514  git log
+  515  git checkout master
+  516  ls
+  517  git status
+  518  git log
+  519  git checkout dev
+  520  ls
+  521  vim laila.txt
+  522  git status
+  523  git add laila.txt
+  524  git commit -m "feat:laila file updated"
+  525  git status
+  526  git log
+  527  git checkout master
+  528  git status
+  529  git log
+  530  git checkout dev
+  531  git log --oneline
+  532  whoami
+  533  sudo apt-get update
+  534  sudo apt install docker.io
+  535  docker --version
+  536  sudo usermod -aG docker $USER
+  537  docker ps
+  538  sudo reboot
+  539  docker ps
+  540  docker pull mysql
+  541  docker images
+  542  docker run mysql:latest
+  543  docker run -e  MYSQL_ROOT_PASSWORD=test@123 mysql:latest
+  544  docker images
+  545  docker ps
+  546  docker ps
+  547  docker images
+  548  docker ps
+  549  docker stop 2938e7892907
+  550  docker ps
+  551  docker ps -a
+  552  docker remove 46f0743651d0
+  553  docker remove d27be1c1a8f7 28c38b3049e8 2938e7892907
+  554  docker ps
+  555  docker ps -a
+  556  docker run -d -p 80:80 nginx:latest
+  557  docker ps
+  558  docker run -d -e MYSQL_ROOT_PASSWORD=test@123 3306:3306 mysql:latest
+  559  docker images
+  560  docker ps
+  561  docker ps -a
+  562  docker run -d -e MYSQL_ROOT_PASSWORD=test@123 mysql:latest
+  563  docker ps
+  564  docker exec -it 734b2ce0c13c
+  565  ls
+  566  cd git-tutorial
+  567  ls
+  568  ls -a
+  569  cd devops-project-batch-7
+  570  ls -a
+  571  ls
+  572  git branch
+  573  cd ..
+  574  git clone https://github.com/LondheShubham153/90DaysOfDevOps.git
+  575  ls
+  576  cd 90DaysOfDevops
+  577  ls
+  578  cd git-tutorial
+  579  ls
+  580  cd 90DaysOfDevOps
+  581  ls -a
+  582  ls
+  583  cd 2024
+  584  ls
+  585  cd day01
+  586  ls
+  587  git status
+  588  git remote -v
+  589  git status
+  590  git log
+  591  ls
+  592  git remote -v
+  593  vim solution.txt
+  594  git status
+  595  git add solution.txt
+  596  git status
+  597  git commit -m "feat 2 soln added"
+  598  git status
+  599  ls
+  600  cd .ssh
+  601  ls
+  602  cd git-tutorial
+  603  ls
+  604  git status
+  605  cd 90DaysOfDevOps
+  606  ls
+  607  git status
+  608  git branch
+  609  git checkout -b demo-batch-7
+  610  ls
+  611  git status
+  612  ls
+  613  cd 2024
+  614  ls
+  615  cd day01
+  616  ls
+  617  cat README.md
+  618  vim solution.txt
+  619  git status
+  620  git add solution.txt
+  621  git status
+  622  git commit -m "fear:added soln for day1"
+  623  ls
+  624  cd git-tutorial
+  625  git status
+  626  git clone git@github.com:ishu-r/batch-7.git
+  627  ls
+  628  cd batch-7
+  629  ls
+  630  git status
+  631  history > all_commands.txt
